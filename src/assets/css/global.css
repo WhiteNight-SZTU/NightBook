@@ -1,0 +1,18 @@
+body {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    animation: backgroundSlide 10s infinite;
+  }
+  
+  @keyframes backgroundSlide {
+    
+    0%, 100%{
+      background-image: url('../background/bg_1.jpg'); 
+    }
+    50%{
+      background-image: url('../background/bg_2.jpg');
+    }
+  }
+  
