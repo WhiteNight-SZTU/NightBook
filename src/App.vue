@@ -45,7 +45,7 @@ export default {
         username:this.username,
         password:this.password
       };
-      const response = await axios.post('http://localhost:3000/login', message);
+      const response = await axios.post('http://localhost:8120/user/login', message);
     },
     togglePasswordVisibility() {
       this.showPassword = !this.showPassword;
