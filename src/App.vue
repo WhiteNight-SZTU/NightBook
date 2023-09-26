@@ -28,6 +28,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
   data() {
     return {
@@ -39,7 +40,12 @@ export default {
     };
   },
   methods: {
-    login() {
+    async login() {
+      const message={
+        username:this.username,
+        password:this.password
+      };
+      const response = await axios.post('http://localhost:3000/login', message);
     },
     togglePasswordVisibility() {
       this.showPassword = !this.showPassword;
