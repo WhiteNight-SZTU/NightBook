@@ -1,31 +1,6 @@
-<template #suffix>
-  <div class="login" :class="{'show': show}">
-    <h2>登录</h2>
-    <form @submit.prevent="login" class="login-form">
-      <div class="form-group">
-        <label for="username" style="color: aliceblue;">用户名</label>
-        <input type="account" id="username" v-model="username" required />
-      </div>
-      <div class="form-group">
-        <label for="password" style="color: aliceblue;">密码</label>
-        <div class="password-input">
-          <input
-            :type="showPassword ? 'text' : 'password'"
-            id="password"
-            v-model="password"
-            required
-          />
-          <span @click="togglePasswordVisibility" class="show-password">
-            {{ showPassword ? '隐藏密码' : '显示密码' }}
-            <span class="clickable-span">{{ show_password_emoji }}</span>
-          </span>
-        </div>
-     
-      </div>
-      <button type="submit">登录</button>
-    </form>
-  </div>
-</template>
+<script setup>
+import WarningBar from './components/WarningBar.vue';
+</script>
 
 <script>
 import axios from 'axios';
@@ -66,6 +41,37 @@ export default {
   },
 };
 </script>
+
+<template #suffix>
+  <WarningBar></WarningBar>
+  <div class="login" :class="{'show': show}">
+    <h2>登录</h2>
+    <form @submit.prevent="login" class="login-form">
+      <div class="form-group">
+        <label for="username" style="color: aliceblue;">用户名</label>
+        <input type="account" id="username" v-model="username" required />
+      </div>
+      <div class="form-group">
+        <label for="password" style="color: aliceblue;">密码</label>
+        <div class="password-input">
+          <input
+            :type="showPassword ? 'text' : 'password'"
+            id="password"
+            v-model="password"
+            required
+          />
+          <span @click="togglePasswordVisibility" class="show-password">
+            {{ showPassword ? '隐藏密码' : '显示密码' }}
+            <span class="clickable-span">{{ show_password_emoji }}</span>
+          </span>
+        </div>
+     
+      </div>
+      <button type="submit">登录</button>
+    </form>
+  </div>
+</template>
+
 
 <style>
 @import "assets/css/global.css";
