@@ -5,16 +5,14 @@
 	padding:0;
 	box-sizing:border-box;
 	font-family: 'Poppins',sans-serif;
-	font-weight: bold;
 }
 section
 {
-	position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+	position:relative;
+	width:100%;
+	height:100vh;
+	overflow:hidden;
+	background: #1d110467;
 }
 section::before
 {
@@ -24,7 +22,7 @@ section::before
 	left:0;
 	width: 100%;
 	height:100%;
-	
+	background: radial-gradient(transparent,transparent,#0005,#0004);
 	z-index: 10000;
 	pointer-events: none;
 }
@@ -34,7 +32,7 @@ section::before
 	left:-400px;
 	display:flex;
 	box-shadow: 0 15px 10px rgba(0, 0, 0, 0.5);
-	transform: rotate(calc(var(--d) * 1deg)) translateY(calc(var(--y)) * 1px);
+	transform: rotate(calc(var(--d) * 1deg)) translateY(calc(var(--y) * 1px));
 }
 .scroll div{
 	background: #e9c804;
