@@ -1,5 +1,6 @@
 <script setup>
 import WarningBar from './components/WarningBar.vue';
+import MouseType_1 from './components/MouseType_1.vue';
 </script>
 
 <script>
@@ -43,16 +44,17 @@ export default {
 </script>
 
 <template #suffix>
-  <WarningBar></WarningBar>
+  <div>
+    <MouseType_1 style="z-index: 1;"></MouseType_1>
   <div class="login" :class="{'show': show}">
     <h2>登录</h2>
     <form @submit.prevent="login" class="login-form">
       <div class="form-group">
-        <label for="username" style="color: aliceblue;">用户名</label>
+        <label for="username" style="color: aliceblue;cursor: none;">用户名</label>
         <input type="account" id="username" v-model="username" required />
       </div>
       <div class="form-group">
-        <label for="password" style="color: aliceblue;">密码</label>
+        <label for="password" style="color: aliceblue;cursor: none;">密码</label>
         <div class="password-input">
           <input
             :type="showPassword ? 'text' : 'password'"
@@ -70,6 +72,8 @@ export default {
       <button type="submit">登录</button>
     </form>
   </div>
+  </div>
+ 
 </template>
 
 
@@ -107,13 +111,15 @@ export default {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
+  cursor: none;
 }
 
 .login button{
   margin-top: 15px;
+  cursor: none
 }
 .show-password{
   user-select: none;
-  cursor: pointer;
+
 }
 </style>
