@@ -21,7 +21,7 @@ export default {
         username:this.username,
         password:this.password
       };
-      const response = await axios.get('/api/user/login?username=123&&password=123', message);
+      
 ;
     },
     togglePasswordVisibility() {
